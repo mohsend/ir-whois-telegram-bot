@@ -4,7 +4,7 @@ require 'uri'
 
 unavailabes = Hash.new
 
-token = '257980407:AAFixDqAcRviEGf2874kc17ambnpTght1TI'
+token = ''
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
@@ -27,14 +27,5 @@ Telegram::Bot::Client.run(token) do |bot|
         bot.api.send_message(chat_id: message.chat.id, text: "Gimme valid .ir domain name.")
       end
     end
-  end
-end
-
-
-
-Thread.new do
-  while true do
-    puts Time.now
-    sleep 1
   end
 end
