@@ -12,7 +12,6 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
     when '/start'
       bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
-      puts message.chat.id
     when '/stop'
       bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message.from.first_name}")
     else
@@ -23,7 +22,7 @@ Telegram::Bot::Client.run(token) do |bot|
         if response.body.include? "ERROR:101: no entries found" 
           bot.api.send_message(chat_id: message.chat.id, text: "#{domain} is AVAILABLE! :)")
         else
-          bot.api.send_message(chat_id: message.chat.id, text: "#{domain} is NOT available! :(\n\r BUT we'll inform you when it goes WILD!")
+          bot.api.send_message(chat_id: message.chat.id, text: "#{domain} is NOT available! :(\n\rBUT we'll inform you when it goes WILD!")
         end
       else
         bot.api.send_message(chat_id: message.chat.id, text: "Gimme valid .ir domain name.")
