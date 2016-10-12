@@ -1,3 +1,6 @@
+# Telegram Token file
+token.txt
+
 *.gem
 *.rbc
 /.config
